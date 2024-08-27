@@ -31,9 +31,9 @@ function displayLobby() {
 
     // 옵션들
     console.log(chalk.blue('1.') + chalk.white(' 새로운 게임 시작'));
-    console.log(chalk.blue('2.') + chalk.white(' 전투 규칙'));
-    console.log(chalk.blue('3.') + chalk.white(' 업적 확인하기'));
-    console.log(chalk.blue('4.') + chalk.white(' 옵션'));
+    console.log(chalk.blue('2.') + chalk.white(' 도움말'));
+    console.log(chalk.blue('3.') + chalk.white(' 업적 확인하기 (미구현)'));
+    console.log(chalk.blue('4.') + chalk.white(' 옵션 (미구현)'));
     console.log(chalk.blue('5.') + chalk.white(' 종료'));
 
     // 하단 경계선
@@ -55,7 +55,7 @@ function handleUserInput() {
             break;
         case '2':
             // 여기에서 전투 규칙 (도움말) 로직을 구현
-            console.log(chalk.whiteBright('============ 전투 규칙 ============'));
+            console.log(chalk.whiteBright('============ 도움말 ============'));
             console.log(
                 chalk.greenBright(
                     `| 기초 스탯 |
@@ -74,10 +74,10 @@ function handleUserInput() {
                     \n`,
                 ) +
                 chalk.magentaBright(
-                    `| 치명타 |
-                    - 치명타는 적의 블록을 무시하고 공격하며 반격이 발동되지 않습니다.
-                    - 치명타는 기본적으로 선공에만 발동하지만 반격 발동이 가능해지는 장비가 존재합니다.
-                    - 치명타 데미지는 기본적으로 2배이지만 이를 강화하는 장비가 존재합니다.
+                    `| 연속공격 |
+                    - 연속공격은 적의 블록을 무시하며 반격이 발동되지 않습니다.
+                    - 연속공격은 기본적으로 선공에만 발동하지만 반격 발동이 가능해지는 장비가 존재합니다.
+                    - 연속공격으로 인한 추가타는 1회이지만 이를 강화하는 장비가 존재합니다.
                     \n`,
                 ) +
                 chalk.yellowBright(
@@ -85,8 +85,7 @@ function handleUserInput() {
                     - 명중률 : 선공으로 적에게 데미지를 가하면 성장합니다.
                     - 블록률 : 블록 성공 시 성장합니다.
                     - 반격률 : 반격 성공 시 성장합니다.
-                    - 치명타 확률 : 치명타로 적에게 데미지를 가하면 성장합니다.
-                    - 성장 보너스 수치는 기본적으로 +1이지만 이를 강화하는 장비가 존재합니다.
+                    - 연속공격률 : 연속 공격을 성공시키면 성장합니다.
                     \n`,
                 ) +
                 chalk.blueBright(
